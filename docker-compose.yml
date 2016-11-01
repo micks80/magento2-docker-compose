@@ -15,8 +15,8 @@ appdata:
   image: tianon/true
   volumes:
     - /srv/www
-    - ~/.composer:/srv/www/.composer
-    - ./www/app:/srv/www/app
+#    - ~/.composer:/srv/www/.composer
+#    - ./www/app:/srv/www/app
 
 phpfpm:
   image: 560414214996.dkr.ecr.us-east-1.amazonaws.com/dockpress:magento2-php-3
