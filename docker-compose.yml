@@ -2,7 +2,7 @@
 # Version 4.1.1
 
 app:
-  image: mageinferno/magento2-nginx:1.10.1-0
+  image: 560414214996.dkr.ecr.us-east-1.amazonaws.com/dockpress:magento2-nginx-5
   links:
     - phpfpm
     - db
@@ -15,11 +15,11 @@ appdata:
   image: tianon/true
   volumes:
     - /srv/www
-#    - ~/.composer:/srv/www/.composer
-#    - ./www/app:/srv/www/app
+    - ~/.composer:/srv/www/.composer
+    - ./www/app:/srv/www/app
 
 phpfpm:
-  image: mageinferno/magento2-php:7.0.8-fpm-3
+  image: 560414214996.dkr.ecr.us-east-1.amazonaws.com/dockpress:magento2-php-3
   links:
     - db
   volumes_from:
@@ -43,7 +43,7 @@ dbdata:
     - /var/lib/mysql
 
 setup:
-  image: mageinferno/magento2-php:7.0.8-fpm-3
+  image: 560414214996.dkr.ecr.us-east-1.amazonaws.com/dockpress:magento2-php-3
   command: /usr/local/bin/mage-setup
   links:
     - db
